@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from facebook.views import play
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("facebook.urls")),
+    path('play/', play)
 ]
