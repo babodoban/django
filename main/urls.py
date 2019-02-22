@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+
 from facebook.views import play
+from facebook.views import play2
+from facebook.views import test
+from facebook.views import profile
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('play/', play)
+    path('play/', play),
+    path('play2/', play2),
+    path('test/', test),
+    path('sean/profile/', profile)
 ]
