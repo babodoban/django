@@ -20,12 +20,11 @@
         </div>
     </div>
     <div class="container">
-        {% for feed in articles %}
         <div class="feed">
             <h3 class="name">{{feed.author}}</h3>
             <div class="date">{{feed.created_at}}</div>
-            <a href="http://127.0.0.1:8000/feed/{{feed.pk}}/" class="title">{{feed.title}}</a>
-            <p class="content">{{feed.text}} <a href="http://127.0.0.1:8000/feed/{{feed.pk}}/" class="more">더 보기</a></p> 
+            <span class="title">{{feed.title}}</span>
+            <p class="content">{{feed.text}}</p> 
             <div class="feedback">
                 <div class="feedback_action">
                     <img src="/static/ic_like.jpg" alt="like" style="width: 13px;">Like
@@ -35,7 +34,6 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
     <div class="footer">
         <div class="footer_tab">
