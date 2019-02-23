@@ -24,6 +24,7 @@ from facebook.views import event
 from facebook.views import fail
 from facebook.views import help
 from facebook.views import warn
+from facebook.views import newsfeed
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,5 +35,6 @@ urlpatterns = [
     path('event/', event),
     path('fail/', fail),
     path('help/', help),
-    path('warn/', warn)
+    path('warn/', warn),
+    path('newsfeed/', newsfeed)
 ]

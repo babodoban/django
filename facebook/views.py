@@ -53,3 +53,6 @@ def help(request):
 
 def warn(request):
     return render(request, 'warn.html')
+
+def newsfeed(request):
+    return render(request, 'newsfeed.html')
