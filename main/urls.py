@@ -26,6 +26,7 @@ from facebook.views import help
 from facebook.views import warn
 from facebook.views import newsfeed
 from facebook.views import detail_feed
+from facebook.views import new_feed
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,5 +39,6 @@ urlpatterns = [
     path('help/', help),
     path('warn/', warn),
     path('', newsfeed),
-    path('feed/<pk>/', detail_feed)
+    path('feed/<pk>/', detail_feed),
+    path('new/', new_feed)
 ]

@@ -63,3 +63,6 @@ def newsfeed(request):
 def detail_feed(request, pk):
     article = Article.objects.get(pk=pk)
     return render(request, 'detail_feed.html', { 'feed': article})
+
+def new_feed(request):
+    return render(request, 'new_feed.html')
