@@ -10,7 +10,7 @@
 <body>
     <div class="header">
         <div class="header_btnLeft">
-            <a href="http://127.0.0.1:8000/new"><img src="/static/ic_pencil.jpg" alt="post" style="width: 30px;"></a>
+            <a href="/new"><img src="/static/ic_pencil.jpg" alt="post" style="width: 30px;"></a>
         </div>
         <div class="header_search">
             <input type="text" class="header_searchBar" placeholder="Search">
@@ -24,14 +24,14 @@
         <div class="feed">
             <h3 class="name">{{feed.author}}</h3>
             <div class="date">{{feed.created_at}}</div>
-            <a href="http://127.0.0.1:8000/feed/{{feed.pk}}/" class="title">{{feed.title}}</a>            
-            <p class="content">{{feed.text}} <a href="http://127.0.0.1:8000/feed/{{feed.pk}}/" class="more">더 보기</a></p> 
+            <a href="/feed/{{feed.pk}}/" class="title">{{feed.title}}</a>            
+            <p class="content">{{feed.text}} <a href="/feed/{{feed.pk}}/" class="more">더 보기</a></p> 
             <div class="feedback">
                 <div class="feedback_action">
                     <img src="/static/ic_like.jpg" alt="like" style="width: 13px;">Like
                 </div>
                 <div class="feedback_action">
-                    <a href="http://127.0.0.1:8000/feed/{{feed.pk}}" class="feedback_comment"><img src="/static/ic_comment.jpg" alt="comment" style="width: 13px;">Comment</a>
+                    <a href="/feed/{{feed.pk}}" class="feedback_comment"><img src="/static/ic_comment.jpg" alt="comment" style="width: 13px;">Comment</a>
                 </div>
             </div>            
         </div>
@@ -39,10 +39,10 @@
     </div>
     <div class="footer">
         <div class="footer_tab">
-            <a href="http://127.0.0.1:8000"><img src="/static/ic_feed.jpg" alt="feed" style="width: 30px;"></a>
+            <a href=""><img src="/static/ic_feed.jpg" alt="feed" style="width: 30px;"></a>
         </div>
         <div class="footer_tab">
-            <a href="http://127.0.0.1:8000/pages/"><img src="/static/ic_globe.jpg" alt="globe" style="width: 30px;"></a>
+            <a href="/pages/"><img src="/static/ic_globe.jpg" alt="globe" style="width: 30px;"></a>
         </div>
         <div class="footer_tab">
             <img src="/static/ic_person.jpg" alt="person" style="width: 30px;">
