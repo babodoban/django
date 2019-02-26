@@ -21,18 +21,13 @@ from facebook.views import play2
 from facebook.views import test
 from facebook.views import profile
 from facebook.views import event
-from facebook.views import fail
-from facebook.views import help
-from facebook.views import warn
+from facebook.views import fail, help, warn
 from facebook.views import newsfeed
 from facebook.views import detail_feed
 from facebook.views import new_feed
-from facebook.views import pages
 from facebook.views import edit_feed
 from facebook.views import remove_feed
-from facebook.views import new_page
-from facebook.views import edit_page
-from facebook.views import remove_page
+from facebook.views import pages, new_page, edit_page, remove_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
