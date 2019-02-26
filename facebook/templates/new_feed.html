@@ -10,7 +10,7 @@
 <body>
     <div class="header">
         <div class="header_btnLeft">
-            <img src="/static/ic_pencil.jpg" alt="post" style="width: 30px;">
+                <a href="http://127.0.0.1:8000/new"><img src="/static/ic_pencil.jpg" alt="post" style="width: 30px;"></a>
         </div>
         <div class="header_search">
             <input type="text" class="header_searchBar" placeholder="Search">
@@ -21,13 +21,16 @@
     </div>
     <div class="container">
         <div class="form_box">
-            <h3>게시물 올리기</h3>
-            <input type="text" class="input_field" placeholder="이름을 입력해주세요."><br>
-            <input type="text" class="input_field" placeholder="비밀번호를 입력해주세요. "><br>
-            <input type="text" class="input_field" placeholder="제목을 입력해주세요."><br>
-            <textarea name="" id="" class="textarea_field" cols="30" rows="10" placeholder="내용을 입력해주세요."></textarea><br>
-            <button class="write_button">게시</button>
-    </div>
+            <form method="POST">
+                {% csrf_token %}
+                <h3>게시물 올리기</h3>
+                <input type="text" class="input_field" placeholder="이름을 입력해주세요." name="author"><br>
+                <input type="text" class="input_field" placeholder="비밀번호를 입력해주세요. " name="password"><br>
+                <input type="text" class="input_field" placeholder="제목을 입력해주세요." name="title"><br>
+                <textarea name="content" id="" class="textarea_field" cols="30" rows="10" placeholder="내용을 입력해주세요."></textarea><br>
+                <button class="write_button">게시</button>
+            </form>
+        </div>
     </div>
     <div class="footer">
         <div class="footer_tab">

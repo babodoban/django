@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from facebook.models import Article
+from facebook.models import Page
 
 # Create your views here.
 
@@ -65,4 +66,18 @@ def detail_feed(request, pk):
     return render(request, 'detail_feed.html', { 'feed': article})
 
 def new_feed(request):
+    if request.method == 'POST': # 폼이 전송되었을 때만 아래 코드 실행
+        if request.POST['author'] != '' and request.POST['title'] != '' and request.POST['content'] != '' and request.POST['password'] != '' :
+            new_article = Article.objects.create(
+                author = request.POST['author'],
+                title = request.POST['title'],
+                text = request.POST['content'],
+                password = request.POST['password']
+            ) # 새 글 등록 종료 
+            return redirect(f'/feed/{new_article.pk}')
     return render(request, 'new_feed.html')
+
+def pages(request):
+    pages = Page.objects.all()
+
+    return render(request, 'pages.html', { 'pages': pages})
