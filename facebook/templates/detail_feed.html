@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>뉴스피드 | Facebook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/static/newsfeed.css?ver=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/newsfeed.css?ver=8">
 </head>
 <body>
     <div class="header">
@@ -23,6 +23,10 @@
         <div class="feed">
             <h3 class="name">{{feed.author}}</h3>
             <div class="date">{{feed.created_at}}</div>
+            <div class="edit">
+                <a href="http://127.0.0.1:8000/feed/{{feed.pk}}/edit"><img src="/static/ic_edit.png" style="height:15px; margin-right:5px;" alt="modify"></a>
+                <a href="http://127.0.0.1:8000/feed/{{feed.pk}}/remove"><img src="/static/ic_delete.png" style="height:15px; margin-right:5px;" alt="delete"></a>
+            </div>
             <span class="title">{{feed.title}}</span>
             <p class="content">{{feed.text}}</p> 
             <div class="feedback">
@@ -34,17 +38,38 @@
                 </div>
             </div>
         </div>
+        <div class="comment">
+            {% for comment in feed.comments.all %}
+            <div class="comment_text">
+                <span class="name">{{comment.author}}</span>
+                {{comment.text}}
+            </div>
+            <div class="comment_date">{{comment.created_at}}
+                <a href="코멘트삭제주소"><img src="/static/ic_delete.png" height="10px"></a>
+            </div>
+            {% endfor %}
+            <div class="comment_input">
+                <span>Comments</span>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="author" placeholder="이름"><br>
+                    <input type="text" name="password" placeholder="비밀번호"><br>
+                    <textarea name="text" id="" cols="30" rows="10" placeholder="코멘트"></textarea>
+                    <button type="submit">등록</button><br>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="footer">
         <div class="footer_tab">
-            <img src="/static/ic_feed.jpg" alt="feed" style="width: 30px;">
+            <a href="http://127.0.0.1:8000"><img src="/static/ic_feed.jpg" alt="feed" style="width: 30px;"></a>
+        </div>
+        <div class="footer_tab">
+            <a href="http://127.0.0.1:8000/pages/"><img src="/static/ic_globe.jpg" alt="globe" style="width: 30px;"></a>
         </div>
         <div class="footer_tab">
             <img src="/static/ic_person.jpg" alt="person" style="width: 30px;">
-        </div>
-        <div class="footer_tab">
-            <img src="/static/ic_globe.jpg" alt="globe" style="width: 30px;">
-        </div>
+        </div>        
         <div class="footer_tab">
             <img src="/static/ic_etc.jpg" alt="etc" style="width: 30px;">
         </div>

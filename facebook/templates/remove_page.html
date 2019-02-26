@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>뉴스피드 | Facebook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/static/newsfeed.css?ver=5">
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/new.css?ver=1">
 </head>
 <body>
     <div class="header">
         <div class="header_btnLeft">
-            <a href="http://127.0.0.1:8000/new"><img src="/static/ic_pencil.jpg" alt="post" style="width: 30px;"></a>
+                <a href="http://127.0.0.1:8000/new"><img src="/static/ic_pencil.jpg" alt="post" style="width: 30px;"></a>
         </div>
         <div class="header_search">
             <input type="text" class="header_searchBar" placeholder="Search">
@@ -20,18 +20,13 @@
         </div>
     </div>
     <div class="container">
-        {% for page in pages %}
-        <div class="pages">
-            <div class="edit">
-                <a href="http://127.0.0.1:8000/pages/{{page.pk}}/edit"><img src="/static/ic_edit.png" style="height:15px; margin-right:5px;" alt="modify"></a>
-                <a href="http://127.0.0.1:8000/pages/{{page.pk}}/remove"><img src="/static/ic_delete.png" style="height:15px; margin-right:5px;" alt="delete"></a>
-            </div>
-            {{page.name}} - {{page.master}} ({{page.category}}) <br>
-            {{page.text}} <br>
-            - {{page.created_at}}
+        <div class="form_box">
+            <form method="POST">
+                {% csrf_token %}
+                <h3>"{{page.name}}" 페이지를 삭제하시겠습니까?</h3>
+                <button class="write_button">삭제</button>
+            </form>
         </div>
-        {% endfor %}
-        <a href="http://127.0.0.1:8000/pages/new"><button class="write_button">새 페이지 만들기</button></a>
     </div>
     <div class="footer">
         <div class="footer_tab">

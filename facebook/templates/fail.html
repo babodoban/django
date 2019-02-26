@@ -3,12 +3,43 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Fail</title>
+    <title>뉴스피드 | Facebook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/new.css?ver=1">
 </head>
 <body>
-    <div style="background-color: red; color: #ffffff; padding: 20px;">
-        비정상적인 접근입니다.
+    <div class="header">
+        <div class="header_btnLeft">
+                <a href="http://127.0.0.1:8000/new"><img src="/static/ic_pencil.jpg" alt="post" style="width: 30px;"></a>
+        </div>
+        <div class="header_search">
+            <input type="text" class="header_searchBar" placeholder="Search">
+        </div>
+        <div class="header_btnRight">
+            <img src="/static/ic_info.jpg" alt="info" style="width: 30px;">
+        </div>
+    </div>
+    <div class="container">
+        <div class="form_box">
+            <form method="POST">
+                <h3>비밀번호가 틀렸습니다. 다시 확인해주세요.</h3>
+                <a href="javascript:history.back()">뒤로가기</a>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_tab">
+            <a href="http://127.0.0.1:8000"><img src="/static/ic_feed.jpg" alt="feed" style="width: 30px;"></a>
+        </div>
+        <div class="footer_tab">
+            <a href="http://127.0.0.1:8000/pages/"><img src="/static/ic_globe.jpg" alt="globe" style="width: 30px;"></a>
+        </div>
+        <div class="footer_tab">
+            <img src="/static/ic_person.jpg" alt="person" style="width: 30px;">
+        </div>        
+        <div class="footer_tab">
+            <img src="/static/ic_etc.jpg" alt="etc" style="width: 30px;">
+        </div>
     </div>
 </body>
 </html>

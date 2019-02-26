@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>뉴스피드 | Facebook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/static/newsfeed.css?ver=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/newsfeed.css?ver=5">
 </head>
 <body>
     <div class="header">
@@ -24,29 +24,29 @@
         <div class="feed">
             <h3 class="name">{{feed.author}}</h3>
             <div class="date">{{feed.created_at}}</div>
-            <a href="http://127.0.0.1:8000/feed/{{feed.pk}}/" class="title">{{feed.title}}</a>
+            <a href="http://127.0.0.1:8000/feed/{{feed.pk}}/" class="title">{{feed.title}}</a>            
             <p class="content">{{feed.text}} <a href="http://127.0.0.1:8000/feed/{{feed.pk}}/" class="more">더 보기</a></p> 
             <div class="feedback">
                 <div class="feedback_action">
                     <img src="/static/ic_like.jpg" alt="like" style="width: 13px;">Like
                 </div>
                 <div class="feedback_action">
-                    <a href="http://127.0.0.1:8000/feed/{{feed.pk}}" class="comment"><img src="/static/ic_comment.jpg" alt="comment" style="width: 13px;">Comment</a>
+                    <a href="http://127.0.0.1:8000/feed/{{feed.pk}}" class="feedback_comment"><img src="/static/ic_comment.jpg" alt="comment" style="width: 13px;">Comment</a>
                 </div>
-            </div>
+            </div>            
         </div>
         {% endfor %}
     </div>
     <div class="footer">
         <div class="footer_tab">
-            <img src="/static/ic_feed.jpg" alt="feed" style="width: 30px;">
+            <a href="http://127.0.0.1:8000"><img src="/static/ic_feed.jpg" alt="feed" style="width: 30px;"></a>
+        </div>
+        <div class="footer_tab">
+            <a href="http://127.0.0.1:8000/pages/"><img src="/static/ic_globe.jpg" alt="globe" style="width: 30px;"></a>
         </div>
         <div class="footer_tab">
             <img src="/static/ic_person.jpg" alt="person" style="width: 30px;">
-        </div>
-        <div class="footer_tab">
-            <img src="/static/ic_globe.jpg" alt="globe" style="width: 30px;">
-        </div>
+        </div>        
         <div class="footer_tab">
             <img src="/static/ic_etc.jpg" alt="etc" style="width: 30px;">
         </div>
