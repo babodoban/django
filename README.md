@@ -7,7 +7,7 @@
 * VS code에서 django 사용법 안내 https://code.visualstudio.com/docs/python/tutorial-django
 ---
 ## 배포까지 완료한 링크
-* babodoban.pythonanywhere.com 
+* http://babodoban.pythonanywhere.com 
 ---
 ## 스터디 기록
 * 2월 22일 https://www.notion.so/babodoban/django-study-3-ce28b51306464b6fb97f3147d6d73cf4
